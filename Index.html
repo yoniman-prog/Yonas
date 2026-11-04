@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #d63384);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.card {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px 22px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    animation: appear 1.5s ease;
+}
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1s infinite;
+}
+
+h1 {
+    color: #e91e63;
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+h2 {
+    color: #ff4081;
+    margin: 20px 0;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+button {
+    background: linear-gradient(45deg, #ff4081, #e91e63);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    padding: 15px;
+    background: #fff0f5;
+    border-radius: 15px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">❤️</div>
+
+    <h1>Happy Birthday!</h1>
+
+    <h2>To My Beautiful Girl 💕</h2>
+
+    <p>
+        Today is a very special day because
+        someone very special was born.
+        You make my world brighter every day.
+        I am so lucky to have you in my life.
+    </p>
+
+    <button onclick="showSurprise()">
+        Open Your Surprise 💝
+    </button>
+
+    <div id="surprise">
+        <h2>I Love You! ❤️</h2>
+        <p>
+            You are my happiness, my sunshine,
+            and my favorite person.
+            I wish you endless happiness.
+            Happy Birthday, my love! 💖
+        </p>
+    </div>
+
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
